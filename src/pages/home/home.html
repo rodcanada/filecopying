@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Copy fucking files included in your app to the device somewhere
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+   Files we will copy for this example are located in src/assets/filestocopy folder and will go to the root of the device in this folder: /sdcard/Android/fuckyou, here are the names:
+   file 1: 972523_anna-kournikova-in-black-wallpapers_1920x1440_h.jpg<br>
+   file 2: shitzu.mp3<br>
+
+  <button ion-button (click)="goUp()">
+    Go up
+  </button>
+
+  <button ion-button (click)="goDown()">
+    Go down
+  </button>
+
+  <br>
+
+  <button ion-button (click)="copyFuckingFiles()">
+    Copy fucking files from folder: /assets/filestocopy to a folder we will create in the default apps. folder on any Android which is /sdcard/Android/, we will copy the files in the subfolder we will call 'fuckyou'
+  </button>
+  <br>
+
+  <center>    
+    <div *ngFor="let item of items">
+
+      <div *ngIf="item.isDirectory" (click)="goDown(item)">
+        Directory: {{item.name}}
+      </div>
+
+      <div *ngIf="item.isFile">
+        File: {{item.name}}
+      </div>
+
+    </div>
+  </center>
+</ion-content>
